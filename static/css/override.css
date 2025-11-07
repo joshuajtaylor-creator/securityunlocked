@@ -113,3 +113,16 @@ header.header{
 
 /* Footer tone-down */
 .footer, .footer a{ color:var(--su-muted); }
+
+/* ===== Footer ===== */
+.su-footer-rule{border:none;height:1px;background:var(--su-border);margin:1.5rem 0;}
+.footer{background:var(--su-bg);text-align:center;padding:1.2rem 0 2rem;}
+.su-footer-social{display:flex;gap:1rem;justify-content:center;margin-bottom:1rem;}
+.su-btn{
+  display:inline-block;padding:.55rem 1.1rem;border:2px solid var(--su-ink);
+  border-radius:8px;text-decoration:none;color:var(--su-ink);
+  font-weight:600; letter-spacing:.02em; background:transparent;
+  transition:background-color .15s, box-shadow .15s, transform .15s;
+}
+.su-btn:hover{background:var(--su-hover); transform:translateY(-1px); box-shadow:0 3px 8px rgba(0,0,0,.06);}
+.su-footer-copy{color:var(--su-muted);font-size:.95rem;}
