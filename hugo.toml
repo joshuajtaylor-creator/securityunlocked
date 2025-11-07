@@ -1,0 +1,32 @@
+baseURL = "https://securityunlocked.com/"
+title   = "Security Unlocked"
+theme   = "PaperMod"
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  defaultTheme = "light"
+  disableThemeToggle = true
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowCodeCopyButtons = true
+  mainSections = ["articles"]
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Issues"
+    url = "/issues/"
+    weight = 2
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 4

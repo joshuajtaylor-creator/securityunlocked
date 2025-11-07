@@ -1,0 +1,115 @@
+:root{
+  --su-bg:#f5efe6;            /* page body cream */
+  --su-header:#ffffff;        /* header true white */
+  --su-ink:#222;
+  --su-muted:#666;
+  --su-accent:#b99d69;        /* gold underline */
+  --su-border:#e7e1d6;        /* soft divider */
+  --su-hover:#f4efe6;         /* subtle hover shade */
+}
+
+/* Body cream background */
+html,body{
+  background:var(--su-bg);
+  color:var(--su-ink);
+  font-family:"Merriweather", Georgia, serif;
+  font-size:18px;
+  line-height:1.7;
+}
+
+/* Content column */
+.main{ max-width:720px; margin:0 auto; }
+
+/* ===== Header: white bar, centered nav ===== */
+header.header{
+  background:var(--su-header) !important;   /* white */
+  box-shadow:none !important;
+  border-bottom:1px solid var(--su-border);
+}
+
+.header .logo{ display:none !important; }
+
+/* center PaperMod nav (.nav > .menu > li > a) */
+.header .nav{ display:flex; justify-content:center; }
+.header .nav .menu{
+  display:flex; justify-content:center; align-items:center;
+  gap:1.6rem; padding:.6rem 0; margin:0;
+}
+.header .nav .menu li{ list-style:none; }
+.header .nav .menu a{
+  position:relative;
+  font-family:"Merriweather", Georgia, serif;
+  font-size:15px; letter-spacing:.10em;
+  color:var(--su-ink); text-decoration:none;
+  padding:.35rem .5rem;
+  transition:background-color .18s ease;
+}
+.header .nav .menu a:hover{ background:var(--su-hover); }
+.header .nav .menu a::after{
+  content:""; position:absolute; left:.5rem; right:.5rem; bottom:.2rem;
+  height:2px; background:transparent; transition:background-color .18s;
+}
+.header .nav .menu a:hover::after,
+.header .nav .menu a.active::after{ background:var(--su-accent); }
+
+/* ===== Hero (centered) ===== */
+.su-hero{ text-align:center; padding:2.8rem 0 1.4rem; }
+.su-logo{ width:150px; height:auto; display:block; margin:0 auto .9rem; opacity:.98; }
+.su-title{
+  font-family:"Playfair Display", Georgia, serif;
+  font-weight:700; font-size:48px; margin:0;
+}
+.su-tagline{ margin:.4rem 0 1.2rem; color:var(--su-muted); font-style:italic; }
+.su-rule{ height:1px; border:none; background:var(--su-border); margin:1.2rem auto 0; width:96%; }
+
+/* ===== Current Issue card ===== */
+.su-issue-card{
+  position:relative; background:#fff; border:1px solid var(--su-border);
+  border-radius:6px; padding:1.2rem 1.25rem; margin:1.4rem 0 1.2rem 0;
+  transition:box-shadow .18s, background-color .18s, transform .18s;
+}
+.su-issue-card::before{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:6px;
+  background:transparent; transition:background-color .18s;
+  border-top-left-radius:6px; border-bottom-left-radius:6px;
+}
+.su-issue-card:hover{ background:var(--su-hover); transform:translateY(-1px);
+  box-shadow:0 4px 10px rgba(0,0,0,.05);
+}
+.su-issue-card:hover::before{ background:var(--su-accent); }
+
+.su-issue-meta{ font-weight:700; opacity:.85; margin:0 0 .15rem 0; }
+.su-issue-title{
+  margin:.1rem 0 .4rem 0; font-size:32px; line-height:1.2;
+  font-family:"Playfair Display", Georgia, serif;
+}
+.su-issue-summary{ margin:.2rem 0 .8rem 0; color:var(--su-muted); }
+.su-issue-link{
+  text-transform:uppercase; letter-spacing:.12em; font-size:14px;
+  color:var(--su-ink); text-decoration:none; border-bottom:2px solid var(--su-accent);
+}
+
+/* ===== Article cards ===== */
+.su-section{ margin-top:1.6rem; }
+.su-section-title{
+  font-family:"Playfair Display", Georgia, serif; font-size:22px; margin:0 0 .8rem 0;
+}
+.su-card{
+  position:relative; background:#fff; border:1px solid var(--su-border);
+  border-radius:6px; padding:1rem 1.2rem; margin:0 0 1rem 0;
+  transition:background-color .18s, box-shadow .18s, transform .18s;
+}
+.su-card:hover{ background:var(--su-hover); transform:translateY(-1px);
+  box-shadow:0 4px 10px rgba(0,0,0,.05);
+}
+.su-article-title{
+  margin:0 0 .2rem 0; font-size:22px; line-height:1.35;
+  font-family:"Playfair Display", Georgia, serif;
+}
+.su-article-title a{ color:var(--su-ink); text-decoration:none; }
+.su-article-title a:hover{ text-decoration:underline; }
+.su-date{ color:var(--su-muted); }
+.su-summary{ margin:.45rem 0 0; }
+
+/* Footer tone-down */
+.footer, .footer a{ color:var(--su-muted); }

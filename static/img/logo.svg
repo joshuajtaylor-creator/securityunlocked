@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-label="Security Unlocked logo">
+  <g fill="none" stroke="#b99d69" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- U-shaped bowl -->
+    <path d="M40 40 v52 a40 40 0 0 0 80 0 V40"/>
+    <!-- keyhole inside the U -->
+    <circle cx="80" cy="86" r="9" fill="#b99d69"/>
+    <path d="M80 95 v18"/>
+  </g>
+</svg>
