@@ -1,0 +1,34 @@
+{{ define "main" }}
+  <section class="su-hero">
+    <img src="/img/logo.svg" alt="Security Unlocked" class="su-logo">
+    <h1 class="su-title">Security Unlocked</h1>
+    <p class="su-tagline">Essays on cybersecurity, AI, and statecraft</p>
+    <hr class="su-rule">
+  </section>
+
+  {{ with site.GetPage "section" "issues" }}
+    {{ $latest := index .Pages.ByDate.Reverse 0 | default nil }}
+    {{ with $latest }}
+      <section class="su-section">
+        <article class="su-issue-card">
+          <div class="su-issue-meta">Current Issue</div>
+          <h3 class="su-issue-title">{{ .Title }}</h3>
+          {{ with .Params.summary }}<p class="su-issue-summary">{{ . }}</p>{{ end }}
+          <a class="su-issue-link" href="{{ .RelPermalink }}">View issue →</a>
+        </article>
+      </section>
+    {{ end }}
+  {{ end }}
+
+  <section class="su-section">
+    <h2 class="su-section-title">Latest Articles</h2>
+    {{ $pages := where .Site.RegularPages "Section" "articles" }}
+    {{ range first 10 (sort $pages "Date" "desc") }}
+      <article class="su-card">
+        <h3 class="su-article-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <small class="su-date">{{ .Date.Format "Jan 2, 2006" }}</small>
+        {{ with .Params.summary }}<p class="su-summary">{{ . }}</p>{{ end }}
+      </article>
+    {{ end }}
+  </section>
+{{ end }}

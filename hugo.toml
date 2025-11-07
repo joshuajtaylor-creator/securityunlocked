@@ -19,8 +19,8 @@ theme   = "PaperMod"
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "Issues"
-    url = "/issues/"
+    name = "Articles"
+    url = "/articles/"
     weight = 2
   [[menu.main]]
     name = "About"

@@ -126,3 +126,62 @@ header.header{
 }
 .su-btn:hover{background:var(--su-hover); transform:translateY(-1px); box-shadow:0 3px 8px rgba(0,0,0,.06);}
 .su-footer-copy{color:var(--su-muted);font-size:.95rem;}
+
+/* === Ledger tokens (refined from DevTools) — overrides earlier guesses === */
+:root{
+  /* Colors */
+  --su-ink:#1a1a1a;            /* primary text / links */
+  --su-ink-2:#2d2d2d;          /* body text */
+  --su-ink-light:#5a5a5a;      /* muted text */
+
+  --su-accent:#d2ad6a;         /* tan/gold accent */
+  --su-hover:#8b7355;          /* hover brown */
+
+  --su-cream:#fcfcfa;          /* page background (off-white) */
+  --su-bg:#fafaf8;             /* very light section bg */
+  --su-white:#ffffff;
+
+  --su-border:#e0dcc8;         /* light border (matches Ledger) */
+  --su-border-dark:#d0d0c8;
+
+  /* Fonts */
+  --su-font-serif:"Crimson Text","Georgia",serif;
+  --su-font-display:"Libre Baskerville","Georgia",serif;
+  --su-font-sans:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;
+}
+
+/* Global application */
+body{background:var(--su-cream);color:var(--su-ink-2);font-family:var(--su-font-sans);}
+h1,h2,h3,.post-title{font-family:var(--su-font-display);color:var(--su-ink);}
+p,li{color:var(--su-ink-2);}
+a{color:var(--su-ink);text-decoration:none;border-bottom:2px solid transparent;}
+a:hover{border-bottom-color:var(--su-hover);}
+
+/* Section divider */
+.su-rule, hr{height:1px;background:var(--su-border);border:0;opacity:.85;margin:1.25rem 0;}
+
+/* Cards */
+.su-card,.su-issue-card{
+  background:var(--su-white);
+  border:1px solid var(--su-border);
+  border-radius:6px;
+  padding:1.2rem 1.25rem;
+  transition:box-shadow .15s ease, transform .15s ease;
+}
+.su-card:hover,.su-issue-card:hover{box-shadow:0 4px 10px rgba(0,0,0,.05);transform:translateY(-1px);}
+
+/* Left accent on hover */
+.su-issue-card{position:relative;overflow:hidden;}
+.su-issue-card::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:transparent;transition:background .15s ease;
+}
+.su-issue-card:hover::before{background:var(--su-accent);}
+
+/* Footer + socials */
+.su-footer-rule{border:none;height:1px;background:var(--su-border);margin:1.5rem 0;}
+.footer{background:var(--su-cream);text-align:center;padding:1.2rem 0 2rem;}
+.su-footer-social{display:flex;gap:1rem;justify-content:center;margin-bottom:1rem;}
+.su-btn{display:inline-block;padding:.55rem 1.1rem;border:2px solid var(--su-ink);border-radius:8px;
+  text-decoration:none;color:var(--su-ink);font-weight:600;letter-spacing:.02em;}
+.su-btn:hover{background:var(--su-bg);transform:translateY(-1px);box-shadow:0 3px 8px rgba(0,0,0,.06);}
+.su-btn i{margin-right:.5rem;font-size:1.05em;vertical-align:-.12em;}
